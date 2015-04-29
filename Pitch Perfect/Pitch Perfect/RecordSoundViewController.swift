@@ -26,7 +26,6 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,10 +39,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         println("in recordAudio");
         recordingInProgress.text = "Recording"
         recordButton.enabled = false
-//        if(recordingInProgress.hidden == true) {
-//            recordingInProgress.hidden = false;
             stopButton.hidden = false;
-//        }
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
         
         let currentDateTime = NSDate()
@@ -87,10 +83,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func stopRecording(sender : UIButton) {
-//        if(recordingInProgress.hidden == false) {
-//            recordingInProgress.hidden = true;
-            stopButton.hidden = true;
-//        }
+        stopButton.hidden = true;
         audioRecorder.stop()
         var audioSession = AVAudioSession.sharedInstance()
         audioSession.setActive(false, error: nil)
