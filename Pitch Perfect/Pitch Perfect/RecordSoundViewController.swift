@@ -18,16 +18,12 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet var recordButton : UIButton!
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         stopButton.hidden = true
         recordButton.enabled = true
         recordingInProgress.text = "Tap to Record"
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
